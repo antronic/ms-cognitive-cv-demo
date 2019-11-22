@@ -11,9 +11,11 @@ const sample = 'https://3er1viui9wo30pkxh1v2nh4w-wpengine.netdna-ssl.com/wp-cont
 const visionEndpoint = ''
 const uriBase = `${visionEndpoint}/vision/v2.1/analyze`
 
+// Need to be secret!
 const visionSubscriptionKey = ''
 
 // Elements
+const responseShow = document.querySelector('#response')
 const imageEl = document.querySelector('#img-preview')
 
 // Render Preview Image
@@ -53,23 +55,6 @@ function analyzeImage(imageUrl) {
       imgPreview.src = imageUrl
 
       window.Prism.highlightAll()
-
-      // set response
-      setAnalyzeResponse(res.data)
-
-      // set caption
-      clearCaption()
-      setCaption()
-      // draw frame
-      renderFrames()
-
-      reportStatus('✅ Analyze done.')
-
-      setLoading(false)
-      clearTimeout(timeout)
-      timeout = setTimeout(() => {
-        reportStatus('💤 Resting...')
-      }, 5000)
     })
     .catch((error) => {
       console.log('error')
@@ -83,5 +68,3 @@ function analyzeImage(imageUrl) {
 window.Prism.highlightAll()
 
 imageEl.src = sample
-console.log('sameple')
-console.log(sample)
