@@ -1,0 +1,20 @@
+.preview-frame {
+  width: 500px;
+  height: 500px;
+
+  border: 2px solid #2664AC;
+}
+
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+
+#img-preview {
+  width: 100%;
+}

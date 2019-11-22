@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel="stylesheet" href="./assets/lib/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="./assets/lib/FDBootstrap/css/fluent.css">
+  <link rel="stylesheet" href="./assets/lib/prism/prism.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <title>Demo Microsoft Computer Vision</title>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+        <h1>Microsoft Computer Vision Demo</h1>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-5">
+
+          <div class="row">
+            <div class="col-12 d-flex">
+              <div class="preview-frame d-flex justify-content-center align-items-center">
+                <img src="" alt="" id="img-preview">
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-12 mt-4">
+              <input type="file" name="file-input" id="file-input"/>
+            </div>
+          </div>
+
+          <div class="row mt-2">
+            <div class="col-12">
+              <input type="text" name="img-url" id="img-url" placeholder="Image URL"/>
+              <button class="btn btn-primary">Analyze</button>
+            </div>
+          </div>
+      </div>
+
+      <div class="col-7">
+          <pre id="code-highlight" class="line-numbers"><code id="response" class="language-json">{}</code></pre>
+      </div>
+    </div>
+  </div>
+</body>
+
+<script type="text/javascript" src="./assets/lib/axios.min.js"></script>
+<script type="text/javascript" src="./assets/lib/prism/prism.js"></script>
+<script type="text/javascript" src="./assets/js/script.js"></script>
+</html>
