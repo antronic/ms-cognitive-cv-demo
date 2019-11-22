@@ -18,8 +18,18 @@ const visionSubscriptionKey = ''
 const responseShow = document.querySelector('#response')
 const imageEl = document.querySelector('#img-preview')
 
+const analyzeBtn = document.querySelector('#analyze-btn')
+const imgUrl = document.querySelector('#img-url')
+
+analyzeBtn.addEventListener('click', () => {
+  analyzeImage(imgUrl.value)
+  renderImage(imgUrl.value)
+})
+
 // Render Preview Image
-function renderImage() {}
+function renderImage(imageUrl) {
+  imageEl.src = imageUrl
+}
 
 /**
  * ============================
@@ -39,7 +49,7 @@ function analyzeImage(imageUrl) {
   axios({
     method: 'post',
     url: uriBase,
-    cognitiveParams,
+    params: cognitiveParams,
 
     data: {
       url: imageUrl,
@@ -47,12 +57,12 @@ function analyzeImage(imageUrl) {
 
     headers: {
       'Content-Type': 'application/json',
-      'Ocp-Apim-Subscription-Key': subscriptionKey,
+      'Ocp-Apim-Subscription-Key': visionSubscriptionKey,
     }
   })
     .then((res) => {
       responseShow.innerHTML = JSON.stringify(res.data, null, '\t')
-      imgPreview.src = imageUrl
+      imageEl.src = imageUrl
 
       window.Prism.highlightAll()
     })
